@@ -1,22 +1,18 @@
+"use client"; 
+import { useState } from "react";
+import Header from './components/Header';
+import Footer from "./components/Footer";
+
 export default function HomePage() {
+  // 1️⃣ Define the state inside the component, before return
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="font-sans text-gray-100 bg-gray-900">
 
-      {/* 1. Header / Navigation */}
-      <header className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-md shadow-lg z-50">
-        <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
-          <div className="text-2xl font-bold text-blue-400 drop-shadow-lg">MediApp</div>
-          <nav className="hidden md:flex space-x-6">
-            <a href="#features" className="hover:text-blue-300 transition">Features</a>
-            <a href="#about" className="hover:text-blue-300 transition">About</a>
-            <a href="#testimonials" className="hover:text-blue-300 transition">Testimonials</a>
-            <a href="#contact" className="hover:text-blue-300 transition">Contact</a>
-          </nav>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-400 transition">
-            Book Appointment
-          </button>
-        </div>
-      </header>
+      {/* 2️⃣ Header / Navigation */}
+      <Header />
+
 
       {/* 2. Hero Section */}
       <section className="relative flex flex-col-reverse md:flex-row items-center justify-between max-w-7xl mx-auto mt-20 px-4 md:px-8 py-24
@@ -110,19 +106,9 @@ export default function HomePage() {
       </section>
 
       {/* 7. Footer */}
-      <footer className="bg-gray-900 border-t border-gray-700 py-10">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-blue-400 font-bold text-xl mb-4 md:mb-0 drop-shadow-lg">MediApp</div>
-          <div className="flex flex-wrap gap-6 text-gray-300">
-            <a href="#features" className="hover:text-blue-400 transition">Features</a>
-            <a href="#about" className="hover:text-blue-400 transition">About</a>
-            <a href="#testimonials" className="hover:text-blue-400 transition">Testimonials</a>
-            <a href="#contact" className="hover:text-blue-400 transition">Contact</a>
-          </div>
-          <div className="text-gray-400 mt-4 md:mt-0">&copy; {new Date().getFullYear()} Mahlock MediApp. All rights reserved.</div>
-        </div>
-      </footer>
+      <Footer/>
 
     </div>
   );
 }
+ 
